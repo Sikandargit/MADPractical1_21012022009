@@ -3,7 +3,7 @@ fun main()
     var int:Int=10
     var doub:Double=20.0
     var ft:Float=30.0F
-    var lg:Long=21012022022
+    var lg:Long=21012022009
     var srt:Short=1
     var byte:Byte=12
     var char:Char='D'
