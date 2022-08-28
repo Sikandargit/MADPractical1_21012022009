@@ -1,13 +1,24 @@
+import java.math.BigInteger
+
 fun main()
 {
     print("Enter Num: ")
-    var num:Long=readLine()!!.toLong()
+    var num:BigInteger=readLine()!!.toBigInteger()
 
-    print("Factorial of $num is: ${fact(num)}")
+    println("Factorial of $num is: ${fact1(num)}")
+    println("with tarlrec factorial = : ${fact(num)}")
 }
-fun fact(num:Long):Long{
-    if(num>1)
-        return num*fact(num-1)
-    else
-        return num
+tailrec fun fact(n:BigInteger,temp: BigInteger= BigInteger("1")):BigInteger{
+    return if(n == BigInteger("1")){
+        temp
+    }else{
+        fact(n-BigInteger("1"), temp*n)
+    }
+}
+fun fact1(n:BigInteger,temp: BigInteger= BigInteger("1")):BigInteger{
+    return if(n == BigInteger("1")){
+        temp
+    }else{
+        fact(n-BigInteger("1"), temp*n)
+    }
 }
